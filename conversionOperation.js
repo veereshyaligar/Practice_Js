@@ -63,6 +63,6 @@ console.log(undefined >0);
 console.log(undefined <0);
 
 console.log("---------");
-console.log("2" === 2);
-console.log(2 === 2);
+console.log("2" === 2);  // strict equality -> fasle 3 === it wonr convert and check its directly compare
+console.log("2" == 2);  // true its convert string to number and check equality
 console.log(2 == 2);
