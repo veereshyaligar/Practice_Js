@@ -30,3 +30,18 @@ let booleanisLooggedIn = Boolean(isloggedIn);  //converting to boolean
 
 console.log(booleanisLooggedIn);
 console.log(typeof booleanisLooggedIn);
+
+
+//0-> true , 1->false
+// "" ->false
+// "veer" ->true
+
+//--------------------------------------------------
+console.log("---------Operations-----------")
+console.log("2"+3);
+console.log(2+"3");
+console.log("1"+2+3);
+console.log(1+2+"3");
+console.log(true);
+console.log(+true);
+console.log(+"");
