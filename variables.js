@@ -21,3 +21,6 @@ console.table([accountId,accountEmail,accoutPassword,accoutnCity])
 let accountState; // not decvlared with value and value is undefined if we print
 
 console.log(accountState)
+
+console.log(typeof undefined); // type of undefined is undefined
+console.log(typeof null); // typeof null is object
