@@ -45,3 +45,24 @@ console.log(1+2+"3");
 console.log(true);
 console.log(+true);
 console.log(+"");
+
+
+//-----------------------------------------------------
+
+
+console.log("--------------comaprison operator-------------");
+
+console.log(null >0);
+console.log(null ==0);
+console.log(null >=0);
+
+
+console.log("---------");
+console.log(undefined ==0);
+console.log(undefined >0);
+console.log(undefined <0);
+
+console.log("---------");
+console.log("2" === 2);
+console.log(2 === 2);
+console.log(2 == 2);
