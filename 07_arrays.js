@@ -42,3 +42,6 @@ const arr2= arr.splice(1,3) // splice includes  elemnets at index 1 and excludes
 
 console.log(arr2);
 console.log("B", arr); //change in original array ->t gives elements excluding range 1 to 3 index elements
+
+
+
