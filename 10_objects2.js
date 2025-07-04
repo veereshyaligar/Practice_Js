@@ -60,3 +60,24 @@ console.log(Object.entries(user2));
 console.log(user2.hasOwnProperty('isLoggedIn')); //true
 
 console.log(user2.hasOwnProperty('isLogged'));  //false
+
+
+
+//Object destructuring
+
+const course ={
+     "courseName":"veer",
+     "price" : "99",
+     "courseInstructor": "veer123"
+}
+
+console.log(course.courseInstructor);
+
+const {courseInstructor} =course  // aftre declaring his we can use variables without writing courseInstructor
+
+console.log(courseInstructor);   // we can directly write courseInstructor
+
+
+const {courseInstructor: Instructor} =course // we can rename
+
+console.log(Instructor);
