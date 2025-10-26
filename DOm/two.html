@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <h1>welcome</h1>
+
+ <button id="stop" style="display:block;margin-bottom: 50px;margin-top:10px;">Stop timeout</button>
+
+
+  <button id="start" >Start Counting</button>
+  <button id="sto">Stop Counting</button>
+   <h2 id="num">0</h2>
+</body>
+
+<script>
+
+    setTimeout(function(){
+     console.log("Welcome again")
+     } ,3000);
+
+     const changeText= function (){
+       document.querySelector('h1').innerHTML= "Welcome to Js series"
+     }
+
+    const stopping= setTimeout(changeText,3000);
+
+    document.querySelector('#stop').
+    addEventListener('click',function(){
+     clearTimeout(stopping)
+     alert('stop');
+    })
+
+    let num=0;
+    let s;
+
+    const intervalTime= function(){
+      num=num+1;
+      document.querySelector('h2').innerHTML=`${num}`
+    }
+
+     document.querySelector('#start').
+    addEventListener('click',function(){
+    if(!s){
+        s= setInterval(intervalTime,1000);
+        }
+    })
+
+    document.querySelector('#sto').
+    addEventListener('click',function(){
+          clearInterval(s);
+          s=null;
+    })
+
+
+</script>
+</html>

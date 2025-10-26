@@ -1,10 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Event Listener</title>
 </head>
-<body>
-$END$
+<body style="background-color:black ; color :white">
+   <ul class="list" style="padding:20px" id="ul">
+      <li style=" display:block; background-color:orange; padding:10px ;width:fit-content;margin-bottom:10px ;border-radius:10px"
+          onclick="alert('Monday')" id="mon">Monday</li> <!-- here its 1st method but not efficient -->
+       <li style="display:block; background-color:orange; padding:10px ;width:fit-content ;margin-bottom:10px;border-radius:10px" id="tue">Tuesday</li>
+       <li style="display:block; background-color:orange; padding:10px ;width:fit-content ;margin-bottom:10px;border-radius:10px" id="wed">wednesday</li>
+       <li style="display:block; background-color:orange; padding:10px ;width:fit-content ;margin-bottom:10px;border-radius:10px" id="fri">Friday</li>
+       <li style="display:block; background-color:orange; padding:10px ;width:fit-content ;margin-bottom:10px;border-radius:10px" id="sat">Saturday</li>
+   </ul>
 </body>
+
+<script>
+    <!-- 2nd method to call event listener-->
+     document.getElementById('tue').onclick= function (){
+       alert("tuesday");
+     }
+
+    <!-- 3rd approach and best approach to call event listener-->
+
+    document.getElementById('wed').addEventListener('click', function (){
+       alert("wednesday clicked");
+    })
+
+      document.getElementById('fri').addEventListener('click', function (e){
+       console.log(e);
+    })
+
+    <!-- Event propogation , commanly flase is used-->
+
+     document.getElementById('ul').addEventListener('click', function (e){
+       console.log("ul is clicked");
+    },false)
+
+     <!-- here after clicking any day  only ul is clicked printed -->
+
+
+
+    document.getElementById('fri').addEventListener('click', function (e){
+       console.log("friday is clicked");
+
+    },false)
+
+
+
+      <!--   it will stop event propagation -->
+    document.getElementById('sat').addEventListener('click', function (e){
+       console.log("Saturday is clicked");
+    e.preventDefault();
+       e.stopPropagation();
+    },false)
+
+
+
+
+     <!-- here after clicking any day  ->first friday is clicked printed and then along with it ul is clicked printed -->
+
+    <!-- here event proprogation happening from inside to outside <!-- here after clicking any day  only ul is clicked printed -->
+
+
+
+     document.querySelector('#ul').addEventListener ('click', function (e) {
+
+      console.log(e.target.parentNode);
+
+      if(e.target.tagName==='LI'){
+          let removeIt= e.target.parentNode
+          console.log(e.target.id);
+          removeIt.remove()
+       }
+
+
+
+<!--        removeIt.remove()-->
+<!--        removeIt.parentNode.removeChild(removeIt)-->
+
+
+
+     })
+</script>
 </html>
